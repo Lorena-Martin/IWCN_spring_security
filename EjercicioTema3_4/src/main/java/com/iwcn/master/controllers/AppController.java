@@ -31,11 +31,11 @@ public class AppController {
 	@PostConstruct
 	private void initDatabase() {
 		
-		// User #1: "user", with password "user1" and role "USER"
+		// User #1: "user", with password "user" and role "USER"
 		GrantedAuthority[] userRoles = { new SimpleGrantedAuthority("ROLE_USER") };  
 		usuarioRepository.save(new Usuario("user", "user", Arrays.asList(userRoles)));
 
-		// User #2: "root", with password "root1" and roles "USER" and "ADMIN"  
+		// User #2: "root", with password "root" and roles "USER" and "ADMIN"  
 		GrantedAuthority[] adminRoles = { new SimpleGrantedAuthority("ROLE_USER"), new SimpleGrantedAuthority("ROLE_ADMIN") };
 		usuarioRepository.save(new Usuario("root", "root", Arrays.asList(adminRoles)));
 
